@@ -1,0 +1,35 @@
+// import { expect, test } from "@playwright/test";
+// import { LoginPage } from "../src/pages/LoginPage";
+
+// let loginPage: LoginPage;
+// // test.beforeEach(async ({ page }) => {
+// //   console.log(`Running ${test.info().title}`);
+// //   await page.goto("https://my.start.url/");
+// // });
+// test.beforeEach(async ({ page }) => {
+//   console.log(`Running........   ${test.info().title}`);
+//   loginPage = new LoginPage(page);
+//   await loginPage.goToLogin();
+// });
+// test("Title Test", async () => {
+//   //   loginPage = new LoginPage(page);
+//   //   await loginPage.goToLogin();
+//   let title = await loginPage.titleName();
+//   console.log("Page Title:", title);
+//   expect(title).toBe("Account Login");
+//   // await page.pause();
+// });
+// test("Do Login Test", async () => {
+//   //   loginPage = new LoginPage(page);
+//   //   await loginPage.goToLogin();
+//   await loginPage.doLogin("pwabc@gmail.com", "abc123");
+//   //await page.pause();
+// });
+
+// test("Login Link Test", async () => {
+//   //   loginPage = new LoginPage(page);
+//   //   await loginPage.goToLogin();
+//   //let link = await loginPage.loginLinkExist();
+//   expect(await loginPage.loginLinkExist()).toBeTruthy();
+//   // await page.pause();
+// });
