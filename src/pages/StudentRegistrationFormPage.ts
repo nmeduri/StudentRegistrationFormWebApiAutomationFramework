@@ -62,29 +62,31 @@ export class StudentRegistrationFormPage extends BasePage {
     lName: string,
     eMail: string,
     mobile: string,
+    dob: string,
     subject: string,
     currAddress: string,
+    state: string,
+    city: string,
   ): Promise<void> {
     await this.firstName.fill(fName);
     await this.lastName.fill(lName);
     await this.email.fill(eMail);
     await this.gender.click();
     await this.mobile.fill(mobile);
-    await this.selectDateOfBirth(25, 1, 1955);
+    await this.selectDateOfBirth(dob);
     await this.subjects.fill(subject);
     await this.hobbies.click();
     await this.currentAddress.fill(currAddress);
-    await this.selectState("Uttar Pradesh");
-    await this.selectCity("Lucknow");
+    await this.selectState(state);
+    await this.selectCity(city);
     await this.clickClose();
   }
   /**
    *
-   * @param day  provide the Day
-   * @param month  provide the month
-   * @param year provide the year
+   * @param dob Provide Date Of Birth
    */
-  private async selectDateOfBirth(day: number, month: number, year: number) {
+  private async selectDateOfBirth(dob: string) {
+    const [day, month, year] = dob.split(",").map(Number);
     await this.dateOfBirthInput.click();
     await this.month.selectOption((month - 1).toString());
     await this.year.selectOption(year.toString());

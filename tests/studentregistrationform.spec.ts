@@ -1,6 +1,7 @@
 import { test, expect } from "../src/fixtures/pagefixtures";
 import { CsvHelper } from "../src/utils/CsvHelper";
 
+let expeResult: string = "Thanks for submitting the form";
 test.beforeEach(
   "Submit Student Registration Form",
   async ({ formPage, page }) => {
@@ -18,7 +19,7 @@ test("Validate Page Title Test", async ({ formPage, page }) => {
 // DD_1: read csv data directly from the CSV file and loop the test method row wise...
 let testData = CsvHelper.readCSV("src/testdata/fillform.csv");
 for (let row of testData) {
-  test(`Fill Registration Form Test ${row.FirstName}-${row.LastName}-${row.Email}-${row.Mobile}-${row.Subjects}-${row.CurrentAddress}`, async ({
+  test(`Fill Registration Form Test ${row.FirstName}-${row.LastName}-${row.Email}-${row.Mobile}-${row.DOB}-${row.Subjects}-${row.CurrentAddress}-${row.State}-${row.City}`, async ({
     formPage,
     stdRegForm,
   }) => {
@@ -30,12 +31,15 @@ for (let row of testData) {
       row.LastName,
       row.Email,
       row.Mobile,
+      row.DOB,
       row.Subjects,
       row.CurrentAddress,
+      row.State,
+      row.City,
     );
-    // FirstName,LastName,Email,Mobile,Subjects,CurrentAddress
+
     let headermessage = await stdRegForm.validateMessage();
     console.log("Header Message:", headermessage);
-    expect(headermessage, "Thanks for submitting the form");
+    expect(headermessage, expeResult);
   });
 }

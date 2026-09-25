@@ -21,7 +21,9 @@ export default defineConfig({
     // Optional: You can also specify an action timeout for clicks/typing
     actionTimeout: 15000,
     headless: !!process.env.CI,
-    trace: "on-first-retry",
+    trace: "retain-on-failure",
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
   },
 
   /* Configure projects for major browsers */

@@ -1,3 +1,3 @@
-FirstName,LastName,     Email,                    Mobile,     Subjects,   CurrentAddress
-Naveen,   KumarMeduri,  naveen.meduri5@gmail.com, 1234567892,  CSE,        Bengalore
-John,     rainbow    ,   abc@pw.com              ,1234567897,  EEE,        Washington    
+FirstName,LastName,     Email,                      Mobile,     DOB,             Subjects,   CurrentAddress,  State,         City
+Naveen,   Kumar Meduri,  naveen.meduri5@gmail.com, 1234567892,  "25, 5, 2000",    CSE,        Bengalore,       Uttar Pradesh, Lucknow
+John,     rainbow    ,   abc@pw.com              ,1234567897,   "10,10,1956" ,     EEE,        Washington,      NCR,           Delhi
