@@ -297,3 +297,134 @@ test("Validate Page Title Test", async ({ formPage, page }) => {
 Fixtures help reduce duplicate setup code and improve framework maintainability.
 
 ---
+
+## 🔌 API Automation
+
+The framework can also support API testing using Playwright's API request capabilities.
+
+Typical API operations include:
+
+```text
+GET
+POST
+PUT
+PATCH
+DELETE
+```
+
+## 📋 Test Data Management
+
+Test data can be maintained separately from test scripts.
+
+Supported formats may include:
+
+- JSON
+- CSV
+- Excel
+
+Example:
+
+text
+testdata/
+
+Separating test data from test scripts makes the framework easier to maintain and allows the same test flow to be executed with multiple datasets.
+
+## 🔄 CI/CD
+
+The project can be integrated with **GitHub Actions** for automated execution.
+
+Example workflow location:
+
+```text
+.github/
+└── workflows/
+    └── playwright.yml
+```
+
+The CI pipeline can perform:
+
+1. Checkout source code
+2. Install Node.js
+3. Install npm dependencies
+4. Install Playwright browsers
+5. Execute automated tests
+6. Generate test reports
+7. Publish test artifacts
+
+---
+
+## 🧹 Git and .gitignore
+
+The repository should not contain generated files, dependencies, credentials, or temporary files.
+
+Examples excluded by `.gitignore`:
+
+```text
+node_modules/
+.env
+.env.*
+test-results/
+playwright-report/
+allure-results/
+dist/
+coverage/
+```
+
+The following files should normally be committed:
+
+```text
+src/
+tests/
+testdata/
+playwright.config.ts
+package.json
+package-lock.json
+tsconfig.json
+.env.example
+.gitignore
+README.md
+.github/workflows/
+```
+
+---
+
+## 🔍 Code Quality Guidelines
+
+The framework follows these practices:
+
+- Use TypeScript strict typing
+- Prefer reusable Page Object methods
+- Avoid duplicate locators
+- Keep test data separate from test logic
+- Avoid hard-coded credentials
+- Prefer reliable locators
+- Avoid unnecessary `waitForTimeout()`
+- Use Playwright auto-waiting wherever possible
+- Keep assertions in test cases where appropriate
+- Use meaningful test names
+- Keep configuration centralized
+- Do not commit generated reports or secrets
+
+## 📈 Future Enhancements
+
+The framework can be enhanced with:
+
+- Parallel execution
+- Multiple environment support
+- API + UI end-to-end scenarios
+- Allure reporting
+- Docker execution
+- GitHub Actions CI/CD
+- Retry mechanism for failed tests
+- Test tagging such as smoke/regression
+- Excel/CSV/JSON data-driven testing
+- Centralized logging
+- API schema validation
+- Accessibility testing
+- Performance testing integration
+
+## 👤 Author
+
+**Naveen Meduri**
+
+QA Automation / Test Automation Engineer
